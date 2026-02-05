@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
     <!-- Make sure that no communication with external sites is possible -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src self 'unsafe-inline'; style-src 'unsafe-inline'; img-src self data:; connect-src data:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; manifest-src 'self'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self' data:">
     <title>Offline QR code generator</title>
     <link rel="manifest" href="/manifest.json">
     <script src="/regsw.js" defer></script>
@@ -80,13 +80,13 @@
             padding: 5px;
         }
         
-        @media (hover: none) or (pointer: coarse) {
+        /*@media (hover: none) or (pointer: coarse) {*/
             /* On touch devices, let the user scroll through the menu bar. On desktop just wrap lines at whitespaces (looks better) */
             header {
                 overflow-y: auto;
                 white-space: nowrap;
             }
-        }
+        /*}*/
 
         header a, header .button {
             color: lightgray;
@@ -531,8 +531,8 @@ The following functions can try to help:
 
     window.addEventListener("resize", on_window_resize);
 
-    // sometimes the event does not get called (for example when closing the browser console). So we call it regularly just to be sure
-    setInterval(on_window_resize, 1000)
+    //// sometimes the event does not get called (for example when closing the browser console). So we call it regularly just to be sure
+    //setInterval(on_window_resize, 1000)
     // Call it shortly after loading the page to determine the inital layout
     setTimeout(on_window_resize, 10);
 

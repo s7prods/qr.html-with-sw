@@ -106,6 +106,20 @@
     <hr>
     <h2><a href="special.html">Special formats</a></h2>
     
+    <hr>
+    <fieldset><legend>PWA Options</legend><button id=clear_cache>Clear cache</button></fieldset>
+    
     <script>addEventListener('click',e=>(e.target?.getAttribute?.('data-noclick')!=null)&&e.preventDefault())</script>
+    
+    <script>
+    clear_cache.onclick =async () => {
+        try {
+            const result = await caches.delete('qrhtml-v1')
+            alert(result ? 'Success' : 'Failed')
+        } catch(e) {
+            alert('Error: ' + e)
+        }
+    }
+    </script>
 </body>
 </html>

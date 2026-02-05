@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previews</title>
+    <script src="/regsw.js" defer></script>
     <style>
         * {
             box-sizing: border-box;
@@ -78,23 +79,47 @@
     You can click the link above a preview to jump to the corresponding website.</p>
 
     <hr>
-    <h2><a href="qr.html">Recommended QR code generator</a></h2>
+    <h2><a href="/">Recommended QR code generator</a></h2>
     <p>This QR code generator offers some convenience features such as being able to drag & drop (or copy-paste) a file into the textbox. If the browser supports it (and you allow it), it can also constantly monitor the systems clipboard and generate a QR code from the clipboard's contents.
-    (<a href="qr.html" download>Download</a>)</p>
+    (<a href="/" download=qr.html>Download</a>)</p>
 
-    <iframe src="qr.html"></iframe>
+    <!-- <iframe src="qr.html"></iframe> -->
 
     <hr>
-    <h2><a href="qr-legacy.html">Legacy QR code generator</a></h2>
+    <h2><a href="qr-legacy.html" data-noclick>Legacy QR code generator (removed in this fork)</a></h2>
     <p>This QR code generator was the previously recommended QR code generator, but it uses a different library that sometimes produces less efficient QR codes.
-    (<a href="qr-legacy.html" download>Download</a>)</p>
+    (<a href="qr-legacy.html" data-noclick download>Download</a>)</p>
 
-    <iframe src="qr-legacy.html"></iframe>
+    <!-- <iframe src="qr-legacy.html"></iframe> -->
+    
+    <hr>
+    <h2><a href="qr-zip.html">QR Zip</a></h2>
+    <p>This is a fork of qr.html, that is designed to transfer as large an input text as possible.
+    (<a href="qr-zip.html" download>Download</a>)</p>
 
     <hr>
     <h2><a href="tiny-qr.html">Tiny QR code generator</a></h2>
     <p>This QR code generator is designed to be as small as possible and thus offers significantly fewer features.
     (<a href="tiny-qr.html" download>Download</a>)</p>
-    <iframe src="tiny-qr.html"></iframe>
+    <!-- <iframe src="tiny-qr.html"></iframe> -->
+
+    <hr>
+    <h2><a href="special.html">Special formats</a></h2>
+    
+    <hr>
+    <fieldset><legend>PWA Options</legend><button id=clear_cache>Clear cache</button></fieldset>
+    
+    <script>addEventListener('click',e=>(e.target?.getAttribute?.('data-noclick')!=null)&&e.preventDefault())</script>
+    
+    <script>
+    clear_cache.onclick =async () => {
+        try {
+            const result = await caches.delete('qrhtml-v1')
+            alert(result ? 'Success' : 'Failed')
+        } catch(e) {
+            alert('Error: ' + e)
+        }
+    }
+    </script>
 </body>
 </html>

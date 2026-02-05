@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Make sure that no communication with external sites is possible -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; manifest-src 'self'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self' data:">
     <title>ZIP QR code generator</title>
+    <script src="/regsw.js" defer></script>
     <script>
         console.log("ZIP QR code generator by github.com/six-two - Version 2025-02-09 - Nayuki Engine")
         const get_or_default_int = (name, default_value) => {

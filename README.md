@@ -1,4 +1,4 @@
-# qr.html
+# index.html (formerly qr.html)
 
 `qr.html` is a self-contained website, that can generate QR codes via [nayuki's QR code generator library](https://github.com/nayuki/QR-Code-generator).
 Because it is fully self-contained, you can just download the file and open it on any computer that has a browser installed, no Internet connection is needed.
@@ -42,7 +42,7 @@ You can also combine the extracting and unzipping into a single command, which d
 zbarimg -q --raw -Sbinary path/to/qr_code.png | bsdtar -xOf -
 ```
 
-## qr-legacy.html
+## qr-legacy.html (removed in this fork)
 
 This version uses the [qr-creator](https://github.com/nimiq/qr-creator) engine, which always encodes text as bytes.
 While this simplifies things from a programming perspective (QR codes can always contain the exact same number of characters depending on the error correction level, regardless of the contents), this can result in bigger QR codes in some cases.

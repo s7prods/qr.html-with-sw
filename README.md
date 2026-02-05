@@ -21,7 +21,7 @@ To set a value, you execute something like the following in your browser's conso
 localStorage.setItem("QR_BORDER_SIZE", "30")
 ```
 
-## qr-zip.html (removed in this fork)
+## qr-zip.html
 
 This is a fork of qr.html, that is designed to transfer as large an input text as possible.
 

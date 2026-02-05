@@ -3,8 +3,12 @@ const CACHE_NAME = "qrhtml-v1";
 const ASSETS = [
   "/",
   "/index.html",
+  // "/overview.html",
+  // "/qr-zip.html",
+  // "/tiny-qr.html",
+  // "/special.html",
   "/regsw.js",
-  "/manifest.json"
+  "/manifest.json",
 ];
 
 self.addEventListener("install", event => {

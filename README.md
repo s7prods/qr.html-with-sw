@@ -1,4 +1,4 @@
-# qr.html
+# index.html (formerly qr.html)
 
 `qr.html` is a self-contained website, that can generate QR codes via [nayuki's QR code generator library](https://github.com/nayuki/QR-Code-generator).
 Because it is fully self-contained, you can just download the file and open it on any computer that has a browser installed, no Internet connection is needed.

@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
     <!-- Make sure that no communication with external sites is possible -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src self 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src data:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src self 'unsafe-inline'; style-src 'unsafe-inline'; img-src self data:; connect-src data:">
     <title>Offline QR code generator</title>
-	<link rel="manifest" href="/manifest.json">
-	<script src="/regsw.js" defer></script>
+    <link rel="manifest" href="/manifest.json">
+    <script src="/regsw.js" defer></script>
     <script>
         console.log("Offline QR code generator by github.com/six-two - Version 2026-01-29 - Nayuki Engine")
         const get_or_default_int = (name, default_value) => {
